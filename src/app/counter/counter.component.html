@@ -1,0 +1,27 @@
+<h3 style="margin-bottom: 0px">Signal Counter</h3>
+<article style="margin-top: 8px;">
+  <div style="text-align: center; font-size: 5rem">{{counter().count}}</div>
+  <footer style="margin-top: 8px">
+  <div class="grid">
+    <button role="button" (click)="start()">Start</button>
+    <button role="button" (click)="stop()">Stop</button>
+    <button role="button" (click)="reset()">Reset</button>
+  </div>
+  <div class="grid">
+    <input type="number" [value]="adhocCount()" (change)="setAdhocCount(+countEle.value)" #countEle/>
+    <button role="button" (click)="setCount(+countEle.value)">Set Count</button>
+  </div>
+  <div>
+    <label for="incrementBy">Increment By</label>
+    <input name="incrementBy" type="number" [value]="diff()" (change)="incrementBy(+diffEle.value)" #diffEle/>
+  </div>
+  <div >
+    <label for="tickspeed">Tick Speed <span style="color: var(--muted-color)">(ms)</span></label>
+    <input name="tickspeed" type="number" [value]="speed()" (change)="setSpeed(+speedEle.value)" #speedEle/>
+  </div>
+  <div class="grid">
+    <button role="button" (click)="countUp()">Count Up</button>
+    <button role="button" (click)="countDown()">Count Down</button>
+  </div>
+  </footer>
+</article>

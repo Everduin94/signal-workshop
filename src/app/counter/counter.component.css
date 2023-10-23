@@ -1,0 +1,12 @@
+
+.start-stop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.left-right {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 8px;
+}
