@@ -1,29 +1,50 @@
-<header class="left-to-right" style="margin-top: 8px;">
+<header class="left-to-right" style="margin-top: 8px">
   <h3 style="margin-bottom: 0">Todo List</h3>
-
   <small>
-    <label for="switch-1">
-      <input type="checkbox" id="switch-1" name="switch-1" role="switch" [checked]="hideCompleted()" (change)="toggleCompleted()" />
+    <label for="switch-1" style="margin-bottom: 0">
+      <input
+        type="checkbox"
+        id="switch-1"
+        name="switch-1"
+        role="switch"
+        [checked]="hideCompleted()"
+        (change)="toggleCompleted()"
+      />
       Hide Complete
     </label>
   </small>
 </header>
 <article style="margin-top: 8px">
-
-
   <div *ngFor="let todo of filteredList()">
     <label for="checkbox-1">
-      <input type="checkbox" id="checkbox-1" name="checkbox-1" [checked]="todo.complete()" (change)="updateTodo(todo.complete)" />
-      {{todo.title}}
+      <input
+        type="checkbox"
+        id="checkbox-1"
+        name="checkbox-1"
+        [checked]="todo.complete()"
+        (change)="updateTodo(todo.complete)"
+      />
+      {{ todo.title }}
     </label>
   </div>
 
   <footer class="left-to-right">
-    <form style="display:contents" (ngSubmit)="addTodo(title.value); title.value = ''">
-      <input  #title type="text" name="addtodo" placeholder="Something important..." aria-label="Add todo"
-        style="margin-bottom: 0; border-radius: 4px 0px 0px 4px" required />
-      <button  type="submit" style="margin: 0px; border-radius: 0px 4px 4px 0px">+Add Todo</button>
+    <form
+      style="display: contents"
+      (ngSubmit)="addTodo(title.value); title.value = ''"
+    >
+      <input
+        #title
+        type="text"
+        name="addtodo"
+        placeholder="Something important..."
+        aria-label="Add todo"
+        style="margin-bottom: 0; border-radius: 4px 0px 0px 4px"
+        required
+      />
+      <button type="submit" style="margin: 0px; border-radius: 0px 4px 4px 0px">
+        +Add Todo
+      </button>
     </form>
   </footer>
-
 </article>
