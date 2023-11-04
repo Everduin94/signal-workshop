@@ -16,11 +16,9 @@
 </header>
 <article style="margin-top: 8px">
   <div *ngFor="let todo of filteredList()">
-    <label for="checkbox-1">
+    <label>
       <input
         type="checkbox"
-        id="checkbox-1"
-        name="checkbox-1"
         [checked]="todo.complete()"
         (change)="updateTodo(todo.complete)"
       />
